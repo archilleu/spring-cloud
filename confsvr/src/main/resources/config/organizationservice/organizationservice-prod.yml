@@ -25,4 +25,4 @@ spring:
       max-pool-prepared-statement-per-connection-size: 20
 
 example:
-  property: default
+  property: prod

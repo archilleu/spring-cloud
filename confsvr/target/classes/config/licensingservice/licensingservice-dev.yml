@@ -1,7 +1,10 @@
 server:
-  port: 8001
+  port: 8000
 
 spring:
+  jpa:
+    show-sql: true
+
   datasource:
     name: druidDataSource
     type: com.alibaba.druid.pool.DruidDataSource
@@ -24,5 +27,13 @@ spring:
       max-open-prepared-statements: 50
       max-pool-prepared-statement-per-connection-size: 20
 
+debug:
+  true
+
+logging:
+  path: logs/
+  level:
+    com: debug
+
 example:
-  property: default
+  property: dev

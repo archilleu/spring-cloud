@@ -1,5 +1,5 @@
 server:
-  port: 8001
+  port: 8000
 
 spring:
   datasource:
@@ -25,4 +25,4 @@ spring:
       max-pool-prepared-statement-per-connection-size: 20
 
 example:
-  property: default
+  property: dev
