@@ -9,6 +9,7 @@
         <module name="licensing-service" />
         <module name="eurekasvr" />
         <module name="organization-service" />
+        <module name="zuulsvr" />
         <module name="configurationserver" />
       </profile>
     </annotationProcessing>
@@ -17,6 +18,7 @@
       <module name="eurekasvr" target="1.8" />
       <module name="licensing-service" target="1.8" />
       <module name="organization-service" target="1.8" />
+      <module name="zuulsvr" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
