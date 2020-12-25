@@ -1,3 +1,7 @@
+/**
+ * 最终， UserContextFilter 用于 将 我们 感兴趣 的 HTTP 首部 的 值 映射 到 Java 类 UserContext 中。
+ * 约翰·卡内尔. Spring微服务实战（异步图书） (Kindle 位置 3806-3807). 人民邮电出版社. Kindle 版本.
+ */
 package com.thoughtmechanix.zuulsvr.utils;
 
 import org.slf4j.Logger;
