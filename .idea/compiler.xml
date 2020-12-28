@@ -6,11 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="licensing-service" />
-        <module name="eurekasvr" />
-        <module name="organization-service" />
-        <module name="zuulsvr" />
+        <module name="specialroutesservice" />
         <module name="configurationserver" />
+        <module name="organization-service" />
+        <module name="eurekasvr" />
+        <module name="licensing-service" />
+        <module name="zuulsvr" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -18,6 +19,7 @@
       <module name="eurekasvr" target="1.8" />
       <module name="licensing-service" target="1.8" />
       <module name="organization-service" target="1.8" />
+      <module name="specialroutesservice" target="1.8" />
       <module name="zuulsvr" target="1.8" />
     </bytecodeTargetLevel>
   </component>
