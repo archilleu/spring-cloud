@@ -7,11 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="configurationserver" />
+        <module name="organization-service" />
         <module name="licensing-service" />
         <module name="eurekasvr" />
-        <module name="organization-service" />
-        <module name="specialroutesservice" />
         <module name="zuulsvr" />
+        <module name="specialroutesservice" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

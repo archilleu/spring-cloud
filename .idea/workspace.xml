@@ -3,21 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="3fc2a97e-d077-4ea8-bbc7-11323a47347d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/confsvr/target/classes/bootstrap.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/confsvr/target/classes/config/licensingservice/licensingservice-dev.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/confsvr/target/classes/config/licensingservice/licensingservice-prod.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/confsvr/target/classes/config/licensingservice/licensingservice.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/confsvr/target/classes/config/organizationservice/organizationservice-dev.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/confsvr/target/classes/config/organizationservice/organizationservice-prod.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/confsvr/target/classes/config/organizationservice/organizationservice.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eurekasvr/target/classes/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/licensing-service/target/classes/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/licensing-service/target/classes/bootstrap.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/organization-service/target/classes/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/organization-service/target/classes/bootstrap.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/organization-service/target/classes/schema.sql" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +26,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../spring-cloud/zuulsvr" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/specialroutes-service" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -133,17 +122,17 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2660" y="226" key="FileChooserDialogImpl" timestamp="1609147713852">
+    <state x="2660" y="226" key="FileChooserDialogImpl" timestamp="1609220953492">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2660" y="226" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609147713852" />
-    <state x="2520" y="223" key="NewModule_or_Project.wizard" timestamp="1609147714526">
+    <state x="2660" y="226" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609220953492" />
+    <state x="2520" y="223" key="NewModule_or_Project.wizard" timestamp="1609220954190">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2520" y="223" key="NewModule_or_Project.wizard/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609147714526" />
-    <state x="2360" y="94" key="SettingsEditor" timestamp="1609147717024">
+    <state x="2520" y="223" key="NewModule_or_Project.wizard/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609220954190" />
+    <state x="2360" y="94" key="SettingsEditor" timestamp="1609220956893">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2360" y="94" key="SettingsEditor/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609147717024" />
+    <state x="2360" y="94" key="SettingsEditor/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609220956893" />
   </component>
 </project>

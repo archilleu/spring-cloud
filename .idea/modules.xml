@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../../spring-cloud/confsvr/configurationserver.iml" filepath="$PROJECT_DIR$/../../spring-cloud/confsvr/configurationserver.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../spring-cloud/eurekasvr/eurekasvr.iml" filepath="$PROJECT_DIR$/../../spring-cloud/eurekasvr/eurekasvr.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../spring-cloud/licensing-service/licensing-service.iml" filepath="$PROJECT_DIR$/../../spring-cloud/licensing-service/licensing-service.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../spring-cloud/organization-service/organization-service.iml" filepath="$PROJECT_DIR$/../../spring-cloud/organization-service/organization-service.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../spring-cloud/specialroutes-service/specialroutesservice.iml" filepath="$PROJECT_DIR$/../../spring-cloud/specialroutes-service/specialroutesservice.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/spring-cloud.iml" filepath="$PROJECT_DIR$/.idea/spring-cloud.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../spring-cloud/zuulsvr/zuulsvr.iml" filepath="$PROJECT_DIR$/../../spring-cloud/zuulsvr/zuulsvr.iml" />
+      <module fileurl="file://$PROJECT_DIR$/confsvr/configurationserver.iml" filepath="$PROJECT_DIR$/confsvr/configurationserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eurekasvr/eurekasvr.iml" filepath="$PROJECT_DIR$/eurekasvr/eurekasvr.iml" />
+      <module fileurl="file://$PROJECT_DIR$/licensing-service/licensing-service.iml" filepath="$PROJECT_DIR$/licensing-service/licensing-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/organization-service/organization-service.iml" filepath="$PROJECT_DIR$/organization-service/organization-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/specialroutes-service/specialroutesservice.iml" filepath="$PROJECT_DIR$/specialroutes-service/specialroutesservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zuulsvr/zuulsvr.iml" filepath="$PROJECT_DIR$/zuulsvr/zuulsvr.iml" />
     </modules>
   </component>
 </project>

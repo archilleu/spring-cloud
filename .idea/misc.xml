@@ -9,6 +9,12 @@
         <option value="$PROJECT_DIR$/../../spring-cloud/organization-service/pom.xml" />
         <option value="$PROJECT_DIR$/../../spring-cloud/specialroutes-service/pom.xml" />
         <option value="$PROJECT_DIR$/../../spring-cloud/zuulsvr/pom.xml" />
+        <option value="$PROJECT_DIR$/zuulsvr/pom.xml" />
+        <option value="$PROJECT_DIR$/confsvr/pom.xml" />
+        <option value="$PROJECT_DIR$/eurekasvr/pom.xml" />
+        <option value="$PROJECT_DIR$/licensing-service/pom.xml" />
+        <option value="$PROJECT_DIR$/organization-service/pom.xml" />
+        <option value="$PROJECT_DIR$/specialroutes-service/pom.xml" />
       </list>
     </option>
   </component>
