@@ -2,11 +2,48 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3fc2a97e-d077-4ea8-bbc7-11323a47347d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/authentication-service/authentication-service.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/docker/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/docker/run.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/com/thoughtmechanix/authentication/Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/com/thoughtmechanix/authentication/InspectHeaderFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/com/thoughtmechanix/authentication/config/DruidConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/com/thoughtmechanix/authentication/config/DruidDataSourceProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/com/thoughtmechanix/authentication/config/ServiceConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/com/thoughtmechanix/authentication/hystrix/DelegatingUserContextCallable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/com/thoughtmechanix/authentication/hystrix/ThreadLocalAwareStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/com/thoughtmechanix/authentication/hystrix/ThreadLocalConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/com/thoughtmechanix/authentication/model/UserOrganization.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/com/thoughtmechanix/authentication/repository/OrgUserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/com/thoughtmechanix/authentication/security/OAuth2Config.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/com/thoughtmechanix/authentication/security/WebSecurityConfigurer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/com/thoughtmechanix/authentication/utils/UserContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/com/thoughtmechanix/authentication/utils/UserContextFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/com/thoughtmechanix/authentication/utils/UserContextHolder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/java/com/thoughtmechanix/authentication/utils/UserContextInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authentication-service/src/main/resources/schema.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/confsvr/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/confsvr/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/confsvr/src/main/resources/config/authenticationservice/authenticationservice.yml" beforeDir="false" afterPath="$PROJECT_DIR$/confsvr/src/main/resources/config/authenticationservice/authenticationservice.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/confsvr/src/main/resources/config/zuulservice/zuulservice.yml" beforeDir="false" afterPath="$PROJECT_DIR$/confsvr/src/main/resources/config/zuulservice/zuulservice.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/licensing-service/licensing-service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/licensing-service/licensing-service.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/licensing-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/licensing-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/licensing-service/src/main/java/com/thoughtmechanix/licenses/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/licensing-service/src/main/java/com/thoughtmechanix/licenses/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/licensing-service/src/main/java/com/thoughtmechanix/licenses/clients/OrganizationRestTemplateClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/licensing-service/src/main/java/com/thoughtmechanix/licenses/clients/OrganizationRestTemplateClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/licensing-service/src/main/java/com/thoughtmechanix/licenses/controllers/LicenseServiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/licensing-service/src/main/java/com/thoughtmechanix/licenses/controllers/LicenseServiceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/licensing-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/licensing-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/organization-service/organization-service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/organization-service/organization-service.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/organization-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/organization-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/organization-service/src/main/java/com/thoughtmechanix/organization/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/organization-service/src/main/java/com/thoughtmechanix/organization/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/organization-service/src/main/java/com/thoughtmechanix/organization/controllers/OrganizationServiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/organization-service/src/main/java/com/thoughtmechanix/organization/controllers/OrganizationServiceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/organization-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/organization-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zuulsvr/src/main/java/com/thoughtmechanix/zuulsvr/filters/SpecialRoutesFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/zuulsvr/src/main/java/com/thoughtmechanix/zuulsvr/filters/SpecialRoutesFilter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,11 +63,22 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/specialroutes-service" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/zuulsvr/src/main/java/com/thoughtmechanix/zuulsvr/filters" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.thoughtmechanix.licenses.security" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\workspace\spring-cloud\zuulsvr\src\main\java\com\thoughtmechanix\zuulsvr\filters" />
+      <recent name="E:\workspace\spring-cloud\organization-service\src\main\java\com\thoughtmechanix\organization" />
+      <recent name="E:\workspace\spring-cloud\authentication-service\src\main\java\com\thoughtmechanix\authentication\config" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.ZuulServerApplication">
     <configuration name="Application (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -46,7 +94,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Application (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Application (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.thoughtmechanix.specialroutes.Application" />
       <module name="specialroutesservice" />
       <extension name="coverage">
@@ -72,12 +120,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EurekaServerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.thoughtmechanix.eurekasvr.EurekaServerApplication" />
-      <module name="eurekasvr" />
+    <configuration name="ConfigServerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.thoughtmechanix.confsvr.ConfigServerApplication" />
+      <module name="configurationserver" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.thoughtmechanix.eurekasvr.*" />
+          <option name="PATTERN" value="com.thoughtmechanix.confsvr.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -101,10 +149,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.ZuulServerApplication" />
-        <item itemvalue="Application.Application (2)" />
-        <item itemvalue="Application.Application (1)" />
         <item itemvalue="Application.Application" />
-        <item itemvalue="Application.EurekaServerApplication" />
+        <item itemvalue="Application.Application (3)" />
+        <item itemvalue="Application.ConfigServerApplication" />
+        <item itemvalue="Application.Application (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -122,17 +170,89 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2660" y="226" key="FileChooserDialogImpl" timestamp="1609220953492">
+    <state width="459" height="466" key="DebuggerActiveHint" timestamp="1609314900392">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2660" y="226" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609220953492" />
-    <state x="2520" y="223" key="NewModule_or_Project.wizard" timestamp="1609220954190">
+    <state width="459" height="466" key="DebuggerActiveHint/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609314900392" />
+    <state x="2660" y="226" key="FileChooserDialogImpl" timestamp="1609223613122">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2520" y="223" key="NewModule_or_Project.wizard/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609220954190" />
-    <state x="2360" y="94" key="SettingsEditor" timestamp="1609220956893">
+    <state x="2660" y="226" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609223613122" />
+    <state width="1877" height="290" key="GridCell.Tab.0.bottom" timestamp="1609318502099">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2360" y="94" key="SettingsEditor/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609220956893" />
+    <state width="1877" height="290" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609318502099" />
+    <state width="1877" height="290" key="GridCell.Tab.0.center" timestamp="1609318502099">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="290" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609318502099" />
+    <state width="1877" height="290" key="GridCell.Tab.0.left" timestamp="1609318502099">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="290" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609318502099" />
+    <state width="1877" height="290" key="GridCell.Tab.0.right" timestamp="1609318502099">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="290" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609318502099" />
+    <state width="1877" height="290" key="GridCell.Tab.1.bottom" timestamp="1609318524202">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="290" key="GridCell.Tab.1.bottom/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609318524202" />
+    <state width="1877" height="290" key="GridCell.Tab.1.center" timestamp="1609318524202">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="290" key="GridCell.Tab.1.center/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609318524202" />
+    <state width="1877" height="290" key="GridCell.Tab.1.left" timestamp="1609318524202">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="290" key="GridCell.Tab.1.left/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609318524202" />
+    <state width="1877" height="290" key="GridCell.Tab.1.right" timestamp="1609318524202">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="290" key="GridCell.Tab.1.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609318524202" />
+    <state x="2520" y="223" key="NewModule_or_Project.wizard" timestamp="1609223614850">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2520" y="223" key="NewModule_or_Project.wizard/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609223614850" />
+    <state x="2360" y="94" key="SettingsEditor" timestamp="1609223615940">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2360" y="94" key="SettingsEditor/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1609223615940" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/authentication-service/src/main/java/com/thoughtmechanix/authentication/Application.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/zuulsvr/src/main/java/com/thoughtmechanix/zuulsvr/filters/SpecialRoutesFilter.java</url>
+          <line>242</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/zuulsvr/src/main/java/com/thoughtmechanix/zuulsvr/filters/SpecialRoutesFilter.java</url>
+          <line>227</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/zuulsvr/src/main/java/com/thoughtmechanix/zuulsvr/filters/SpecialRoutesFilter.java</url>
+          <line>71</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/zuulsvr/src/main/java/com/thoughtmechanix/zuulsvr/filters/AuthenticationFilter.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/zuulsvr/src/main/java/com/thoughtmechanix/zuulsvr/filters/AuthenticationFilter.java</url>
+          <line>75</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

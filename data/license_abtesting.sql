@@ -38,6 +38,7 @@ CREATE TABLE `abtesting` (
 LOCK TABLES `abtesting` WRITE;
 /*!40000 ALTER TABLE `abtesting` DISABLE KEYS */;
 INSERT INTO `abtesting` VALUES ('organizationservice','Y','http://orgservice-new:8087',5);
+INSERT INTO `abtesting` VALUES ('licensingservice','Y','http://localhost:5555/api/licensingservice',5);
 /*!40000 ALTER TABLE `abtesting` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

@@ -38,7 +38,7 @@ public class LicenseServiceController {
                                 @PathVariable("licenseId") String licenseId) {
 
         License license = licenseService.getLicense(organizationId, licenseId, "");
-        license.setComment("8003"+license.getComment());
+        license.setComment(license.getComment());
         return license;
     }
 

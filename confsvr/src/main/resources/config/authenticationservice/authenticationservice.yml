@@ -1,12 +1,31 @@
-spring.jpa.database: "POSTGRESQL"
-spring.datasource.platform:  "postgres"
-spring.jpa.show-sql: "true"
-spring.database.driverClassName: "org.postgresql.Driver"
-spring.datasource.url: "jdbc:postgresql://database:5432/eagle_eye_local"
-spring.datasource.driver-class-name: "org.postgresql.Driver"
-spring.datasource.username: "postgres"
-spring.datasource.password: "{cipher}4788dfe1ccbe6485934aec2ffeddb06163ea3d616df5fd75be96aadd4df1da91"
-spring.datasource.testWhileIdle: "true"
-spring.datasource.validationQuery: "SELECT 1"
-spring.jpa.properties.hibernate.dialect: "org.hibernate.dialect.PostgreSQLDialect"
-signing.key: "345345fsdfsf5345"
+server:
+  port: 8003
+
+signing:
+  key: "345345fsdfsf5345"
+
+spring:
+  datasource:
+    name: druidDataSource
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      url: jdbc:mysql://localhost:3306/license?serverTimezone=UTC&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false
+      username: root
+      password: root
+      filters: stat,wall,slf4j,config #使用默认的logback日志
+      max-active: 100   #最大连接数
+      initial-size: 1   #初始化连接数
+      max-wait: 60000   #获取连接等待超时时间
+      min-idle: 1       #最小空闲数
+      time-between-eviction-runs-millis: 60000  #检查关闭空闲连接时间，ms
+      min-evictable-idle-time-millis: 300000    #连接生存时间，ms
+      validation-query: select 'x'
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      pool-prepared-statements: true
+      max-open-prepared-statements: 50
+      max-pool-prepared-statement-per-connection-size: 20
+
+example:
+  property: default

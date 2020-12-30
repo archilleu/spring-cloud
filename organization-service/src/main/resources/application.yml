@@ -1,3 +1,7 @@
+security:
+  oauth2:
+    resource:
+      userInfoUri: http://localhost:8003/auth/user
 
 eureka:
   instance:

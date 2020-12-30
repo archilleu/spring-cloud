@@ -72,7 +72,7 @@ public class SpecialRoutesFilter extends ZuulFilter {
         ResponseEntity<AbTestingRoute> restExchange = null;
         try {
             restExchange = restTemplate.exchange(
-                             "http://specialroutesservice/v1/route/abtesting/{serviceName}",
+                            "http://specialroutesservice/v1/route/abtesting/{serviceName}",
                              HttpMethod.GET,
                              null, AbTestingRoute.class, serviceName);
         }
