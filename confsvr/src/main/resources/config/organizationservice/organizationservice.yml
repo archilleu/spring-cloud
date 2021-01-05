@@ -1,6 +1,9 @@
 server:
   port: 8001
 
+signing:
+  key: "345345fsdfsf5345"
+
 spring:
   datasource:
     name: druidDataSource

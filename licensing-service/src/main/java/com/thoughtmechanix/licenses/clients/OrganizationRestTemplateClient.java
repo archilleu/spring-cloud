@@ -11,7 +11,7 @@ import org.springframework.web.client.RestTemplate;
 @Component
 public class OrganizationRestTemplateClient {
     @Autowired
-    OAuth2RestTemplate restTemplate;
+    RestTemplate restTemplate;
 
     public Organization getOrganization(String organizationId){
 

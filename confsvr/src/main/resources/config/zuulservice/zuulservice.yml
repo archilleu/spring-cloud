@@ -1,3 +1,6 @@
+signing:
+  key: "345345fsdfsf5345"
+
 zuul:
   sensitiveHeaders: Cookie,Set-Cookie
   prefix:  /api
