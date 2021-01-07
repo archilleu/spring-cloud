@@ -2,3 +2,20 @@ security:
   oauth2:
     resource:
       userInfoUri: http://localhost:8003/auth/user
+
+redis:
+  server: localhost
+  port: 6379
+
+spring:
+  cloud:
+    stream:
+      bindings:
+        input:
+          destination: orgChangeTopic
+          content-type: application/json
+          group: licensingGroup
+
+        binder:
+          zkNodes: localhost
+          brokers: localhost

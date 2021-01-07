@@ -39,6 +39,6 @@ public class OrganizationServiceController {
     public void deleteOrganization( @PathVariable("organizationId") String orgId) {
         Organization org = new Organization();
         org.setId(orgId);
-        orgService.deleteOrg( org );
+        orgService.deleteOrg( org.getId() );
     }
 }

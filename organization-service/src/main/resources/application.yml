@@ -3,6 +3,18 @@ security:
     resource:
       userInfoUri: http://localhost:8003/auth/user
 
+spring:
+  cloud:
+    stream:
+      bindings:
+        output:
+          destination:  orgChangeTopic
+          content-type: application/json
+      kafka:
+        binder:
+          zkNodes: localhost
+          brokers: localhost
+
 eureka:
   instance:
     preferIpAddress: true

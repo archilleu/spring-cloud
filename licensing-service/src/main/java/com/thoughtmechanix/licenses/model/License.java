@@ -6,10 +6,11 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "licenses")
-public class License{
+public class License implements Serializable {
   @Id
   @Column(name = "license_id", nullable = false)
   private String licenseId;

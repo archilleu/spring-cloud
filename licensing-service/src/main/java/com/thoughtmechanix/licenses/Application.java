@@ -1,6 +1,8 @@
 package com.thoughtmechanix.licenses;
 
+import com.thoughtmechanix.licenses.config.ServiceConfig;
 import com.thoughtmechanix.licenses.utils.UserContextInterceptor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
@@ -9,8 +11,11 @@ import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
+import org.springframework.cloud.stream.annotation.EnableBinding;
+import org.springframework.cloud.stream.messaging.Sink;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Primary;
+import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.security.oauth2.client.OAuth2ClientContext;
 import org.springframework.security.oauth2.client.OAuth2RestTemplate;
 import org.springframework.security.oauth2.client.resource.OAuth2ProtectedResourceDetails;
@@ -27,6 +32,7 @@ import java.util.List;
 @EnableFeignClients
 @EnableCircuitBreaker
 @EnableResourceServer
+@EnableBinding(Sink.class)
 public class Application {
 
 //    @LoadBalanced
@@ -41,6 +47,9 @@ public class Application {
 //                                                 OAuth2ProtectedResourceDetails details) {
 //        return new OAuth2RestTemplate(details, oauth2ClientContext);
 //    }
+
+    @Autowired
+    ServiceConfig serviceConfig;
 
     @LoadBalanced
     @Primary
@@ -58,6 +67,13 @@ public class Application {
         return template;
     }
 
+    @Bean
+    public JedisConnectionFactory jedisConnectionFactory() {
+        JedisConnectionFactory jedisConnectionFactory = new JedisConnectionFactory();
+        jedisConnectionFactory.setHostName(serviceConfig.getRedisServer());
+        jedisConnectionFactory.setPort(serviceConfig.getRedisPort());
+        return jedisConnectionFactory;
+    }
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
