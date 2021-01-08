@@ -3,6 +3,7 @@ package com.thoughtmechanix.licenses.events.handlers;
 import com.thoughtmechanix.licenses.events.CustomChannels;
 import com.thoughtmechanix.licenses.events.models.OrganizationChangeModel;
 //import com.thoughtmechanix.licenses.repository.OrganizationRedisRepository;
+import com.thoughtmechanix.licenses.repository.OrganizationRedisRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,15 +13,17 @@ import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.cloud.stream.messaging.Sink;
 
 
-@EnableBinding(Input.class)
+@EnableBinding(CustomChannels.class)
+//@EnableBinding(Input.class)
 public class OrganizationChangeHandler {
 
-//    @Autowired
-//    private OrganizationRedisRepository organizationRedisRepository;
+    @Autowired
+    private OrganizationRedisRepository organizationRedisRepository;
 
     private static final Logger logger = LoggerFactory.getLogger(OrganizationChangeHandler.class);
 
-    @StreamListener("input")
+//    @StreamListener("input")
+    @StreamListener("inboundOrgChanges")
     public void loggerSink(OrganizationChangeModel orgChange) {
         logger.debug("Received a message of type " + orgChange.getType());
         switch(orgChange.getAction()){
@@ -32,11 +35,11 @@ public class OrganizationChangeHandler {
                 break;
             case "UPDATE":
                 logger.debug("Received a UPDATE event from the organization service for organization id {}", orgChange.getOrganizationId());
-//                organizationRedisRepository.deleteOrganization(orgChange.getOrganizationId());
+                organizationRedisRepository.deleteOrganization(orgChange.getOrganizationId());
                 break;
             case "DELETE":
                 logger.debug("Received a DELETE event from the organization service for organization id {}", orgChange.getOrganizationId());
-//                organizationRedisRepository.deleteOrganization(orgChange.getOrganizationId());
+                organizationRedisRepository.deleteOrganization(orgChange.getOrganizationId());
                 break;
             default:
                 logger.error("Received an UNKNOWN event from the organization service of type {}", orgChange.getType());
