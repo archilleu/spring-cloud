@@ -14,3 +14,10 @@ zuul:
       path: /it2/**
 #超时
 #hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 2
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10
