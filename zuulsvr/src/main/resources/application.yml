@@ -8,6 +8,12 @@ logging:
       org.springframework.web: WARN
       com.thoughtmechanix: DEBUG
 
+spring:
+  sleuth:
+    sampler:
+      percentage: 1
+  zipkin:
+    baseUrl: http://localhost:9411
 
 eureka:
   instance:
