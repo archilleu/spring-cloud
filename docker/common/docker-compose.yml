@@ -1,10 +1,11 @@
+#sudo docker-compose -f docker/common/docker-compose.yml up
 version: '2'
 services:
-    eurekaserver:
+    eurekaserver:		#每个正在启动的服务都会有一个标签.这个标签将成为Docker实例启动时的DNS条目，其他服务将通过这个DNS条目访问这个服务
          image:
              cjy/tmx-eurekasvr:cjy
          ports:
-             - "8761:8761"
+             - "8761:8761"	#对外暴露的端口
 
     configserver:
         image:
@@ -22,20 +23,50 @@ services:
         environment:
             SERVER_PORT: "9411"
 
-    zuulserver:
-        image: cjy/tmx-zuulsvr:cjy
+            #    zuulserver:
+            #        image: cjy/tmx-zuulsvr:cjy
+            #        ports:
+            #            - "5555:5555"
+            #        environment:
+            #            PROFILE: "default"
+            #            SERVER_PORT: "5555"
+            #            CONFIGSERVER_URI: "http://configserver:8888"
+            #            EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
+            #            ZIPKIN_URI: "http://zipkin:9411"
+            #            DATABASESERVER_PORT: "5432"
+            #            EUREKASERVER_PORT:   "8761"
+            #            CONFIGSERVER_PORT:   "8888"
+            #            ZIPKIN_PORT:         "9411"
+
+    specialroutesservice:
+        image: cjy/tmx-specialroutes-service:cjy
         ports:
-            - "5555:5555"
+            - "8002:8002"
         environment:
             PROFILE: "default"
-            SERVER_PORT: "5555"
+            SERVER_PORT: "8002"
             CONFIGSERVER_URI: "http://configserver:8888"
             EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
             ZIPKIN_URI: "http://zipkin:9411"
-            DATABASESERVER_PORT: "5432"
+            DATABASESERVER_PORT: "3306"
             EUREKASERVER_PORT:   "8761"
             CONFIGSERVER_PORT:   "8888"
+            ZUULSERVER_PORT:     "5555"
             ZIPKIN_PORT:         "9411"
+
+    authenticationservice:
+        image: cjy/tmx-authentication-service:cjy
+        ports:
+            - "8003:8003"
+        environment:
+        environment:
+            PROFILE: "default"
+            SERVER_PORT: "8003"
+            CONFIGSERVER_URI: "http://configserver:8888"
+            EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
+            DATABASE_PORT: "3306"
+            EUREKASERVER_PORT:   "8761"
+            CONFIGSERVER_PORT:   "8888"
 
     licensingservice:
         image: cjy/tmx-licensing-service:cjy
@@ -57,58 +88,23 @@ services:
             REDIS_PORT:          "6379"
             ZIPKIN_PORT:         "9411"
 
-            #organizationservice:
-            #    image: cjy/tmx-organization-service:cjy
-            #    ports:
-            #    - "8001:8001"
-            #    environment:
-            #        PROFILE: "dev"
-            #        SERVER_PORT: "8001"
-            #        CONFIGSERVER_URI: "http://configserver:8888"
-            #        EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
-            #        ZIPKIN_URI: "http://zipkin:9411"
-            #        KAFKASERVER_URI: "kafkaserver"
-            #        ZKSERVER_URI: "kafkaserver"
-            #        DATABASESERVER_PORT: "3306"
-            #        EUREKASERVER_PORT:   "8761"
-            #        CONFIGSERVER_PORT:   "8888"
-            #        ZUULSERVER_PORT:     "5555"
-            #        KAFKASERVER_PORT:    "2181"
-            #        ZIPKIN_PORT:         "9411"
-            #        ENCRYPT_KEY:       "IMSYMMETRIC"
-
-    redis:
-        image: redis:alpine
+    organizationservice:
+        image: cjy/tmx-organization-service:cjy
         ports:
-            - 6379:6379
-
-    kafkaserver:
-        image: spotify/kafka
-        ports:
-            - 2181:2181
-            - 9092:9092
-
-    database:
-        image: mysql:5.7
-        restart: always
+        - "8001:8001"
         environment:
-            MYSQL_DATABASE: 'license'
-            # So you don't have to use root, but you can if you like
-            MYSQL_USER: 'user'
-            # You can use whatever password you like
-            MYSQL_PASSWORD: '123456@123456'
-            # Password for root access
-            MYSQL_ROOT_PASSWORD: '123456@123456'
-        ports:
-            # <Port exposed> : < MySQL Port running inside container>
-            - '3306:3306'
-        expose:
-            # Opens port 3306 on the container
-            - '3306'
-            # Where our data will be persisted
-        volumes:
-            - my-db:/var/lib/mysql
+            PROFILE: "dev"
+            SERVER_PORT: "8001"
+            CONFIGSERVER_URI: "http://configserver:8888"
+            EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
+            ZIPKIN_URI: "http://zipkin:9411"
+            KAFKASERVER_URI: "kafkaserver"
+            ZKSERVER_URI: "kafkaserver"
+            DATABASESERVER_PORT: "3306"
+            EUREKASERVER_PORT:   "8761"
+            CONFIGSERVER_PORT:   "8888"
+            ZUULSERVER_PORT:     "5555"
+            KAFKASERVER_PORT:    "2181"
+            REDIS_PORT:          "6379"
+            ZIPKIN_PORT:         "9411"
 
-# Names our volume
-volumes:
-    my-db:

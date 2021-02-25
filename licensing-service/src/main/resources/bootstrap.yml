@@ -1,9 +1,11 @@
+#一般来说，bootstrap.yml文件包含服务的应用程序名称,应用程序profile和连接到Spring Cloud Config服务器的URI。
 spring:
   application:
     name: licensingservice
+
   profiles:
-    active:
-      dev
-  cloud:
-    config:
-      uri: http://confsvr:8888
+    active: local
+
+cloud:
+  config:
+    uri: http://localhost:8888
