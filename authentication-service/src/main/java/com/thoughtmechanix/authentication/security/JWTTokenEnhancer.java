@@ -12,6 +12,9 @@ import org.springframework.security.oauth2.provider.token.TokenEnhancer;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 自定义令牌
+ */
 public class JWTTokenEnhancer implements TokenEnhancer {
     @Autowired
     private OrgUserRepository orgUserRepo;

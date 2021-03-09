@@ -12,12 +12,11 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 @Configuration
 public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
 
-    @Autowired
-    UserDetailsService userDetailsService;
 
     @Override
     @Bean
     public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
     }
+
 }

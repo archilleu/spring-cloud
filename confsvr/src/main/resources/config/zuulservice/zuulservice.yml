@@ -2,7 +2,7 @@ signing:
   key: "345345fsdfsf5345"
 
 zuul:
-  sensitiveHeaders: Cookie,Set-Cookie
+  sensitiveHeaders: Cookie,Set-Cookie #这一配置是黑名单,它含Zuul不会传播到下游服务的敏感首部。(Cookie、 Set- Cookie 和 Authorization）
   prefix:  /api
   routes:
     organizationservice: /organization/**

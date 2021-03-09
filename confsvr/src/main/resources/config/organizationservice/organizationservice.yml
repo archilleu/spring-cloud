@@ -1,9 +1,6 @@
 server:
   port: 8001
 
-signing:
-  key: "345345fsdfsf5345"
-
 spring:
   datasource:
     name: druidDataSource
@@ -11,7 +8,7 @@ spring:
     druid:
       url: jdbc:mysql://database:3306/license?serverTimezone=UTC&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false
       username: root
-      password: 123456@123456
+      password: root
       filters: stat,wall,slf4j,config #使用默认的logback日志
       max-active: 100   #最大连接数
       initial-size: 1   #初始化连接数
@@ -27,5 +24,42 @@ spring:
       max-open-prepared-statements: 50
       max-pool-prepared-statement-per-connection-size: 20
 
-example:
-  property: default
+signing:
+  key: "345345fsdfsf5345"
+
+eureka:
+  instance:
+    #true注册服务的IP，而不是服务器名称
+    #为什么偏向于IP地址在默认情况下，Eureka在尝试注册服务 ，将会使用主机名让外界与它进行联系。这种方式在基于服务器的环境中运行良好，
+    #在这样的环境中，服务 被分配一个DNS支持的主机名。但是，在基于容器的部署（如Docker）中，容器将以随机生成的主机名启动，并且该容器没有DNS记录。
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://eurekaserver:8761/eureka/
+
+redis:
+  server: redis
+  port: 6379
+
+cloud:
+  stream:
+    bindings:
+      #        input:
+      #          destination: orgChangeTopic
+      #          content-type: application/json
+      #          group: licensingGroup
+
+      inboundOrgChanges:
+        destination: orgChangeTopic
+        content-type: application/json
+        group: licensingGroup
+
+zipkin:
+  baseUrl: http://zipkin:9411
+
+sleuth:
+  sampler:
+    percentage: 1
+

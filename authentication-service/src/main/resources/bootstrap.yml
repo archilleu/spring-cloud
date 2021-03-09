@@ -1,9 +1,10 @@
 spring:
   application:
     name: authenticationservice
+
   profiles:
-    active:
-      default
-  cloud:
-    config:
-      enabled: true
+    active: local
+
+cloud:
+  config:
+    uri: http://localhost:8888

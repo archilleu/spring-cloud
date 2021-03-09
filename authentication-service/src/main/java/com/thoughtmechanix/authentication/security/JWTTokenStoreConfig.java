@@ -11,6 +11,10 @@ import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 
+/**
+ * hwo to generator jwt token config
+ */
+
 @Configuration
 public class JWTTokenStoreConfig {
 
@@ -22,9 +26,7 @@ public class JWTTokenStoreConfig {
         return new JwtTokenStore(jwtAccessTokenConverter());
     }
 
-    //　@ Primary 注解 用于 告诉 Spring， 如果 有多 个 特定 类型 的 bean（ 在 本例 中 是 DefaultTokenService）， 那么 就 使用 被@ Primary 标注 的 bean 类型 进行 自动 注入
-    //
-    //约翰·卡内尔. Spring微服务实战（异步图书） (Kindle 位置 4583-4584). 人民邮电出版社. Kindle 版本.
+    //@Primary注解用于告诉Spring，如果有多个特定类型的bean（在本例中是DefaultTokenService），那么就使用被@Primary标注的bean型行自动注入
     @Bean
     @Primary
     public DefaultTokenServices tokenServices() {
