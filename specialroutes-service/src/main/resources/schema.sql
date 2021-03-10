@@ -7,5 +7,5 @@ CREATE TABLE abtesting (
   weight            INT);
 
 
-INSERT INTO abtesting (service_name, active,  endpoint, weight) VALUES ('organizationservice', 'Y','http://orgservice-new:8087',5);
-INSERT INTO abtesting (service_name, active,  endpoint, weight) VALUES ('licensingservice', 'Y','http://licensingservice:8003',5);
+INSERT INTO abtesting (service_name, active,  endpoint, weight) VALUES ('organizationservice', 'Y','http://organizationservice:8001',5);
+INSERT INTO abtesting (service_name, active,  endpoint, weight) VALUES ('licensingservice', 'Y','http://licensingservice:8000',5);

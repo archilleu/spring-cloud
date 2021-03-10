@@ -1,0 +1,32 @@
+#sudo docker-compose -f docker/common/docker-compose-cloud.yml up
+version: '2'
+services:
+    eurekaserver:                       #每个正在启动的服务都会有一个标签.这个标签将成为Docker实例启动时的DNS条目，其他服务将通过这个DNS条目访问这个服务
+         image:
+             cjy/tmx-eurekasvr:cjy
+         ports:
+             - "8761:8761"              #对外暴露的端口
+
+    configserver:
+        image:
+            cjy/tmx-confsvr:cjy
+        ports:
+            - "8888:8888"
+        environment:
+            EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
+            EUREKASERVER_PORT: "8761"
+
+    authenticationservice:
+        image: cjy/tmx-authentication-service:cjy
+        ports:
+            - "8003:8003"
+        environment:
+            PROFILE: "prod"
+            SERVER_PORT: "8003"
+            CONFIGSERVER_URI: "http://configserver:8888"
+            EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
+            DATABASE_PORT: "3306"
+            EUREKASERVER_PORT:   "8761"
+            CONFIGSERVER_PORT:   "8888"
+
+

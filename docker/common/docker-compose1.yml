@@ -1,0 +1,43 @@
+#sudo docker-compose -f docker/common/docker-compose.yml up
+version: '2'
+services:
+    licensingservice:
+        image: cjy/tmx-licensing-service:cjy
+        ports:
+            - "8000:8000"
+        environment:
+            PROFILE: "prod"
+            SERVER_PORT: "8000"
+            CONFIGSERVER_URI: "http://configserver:8888"
+            EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
+            ZIPKIN_URI: "http://zipkin:9411"
+            KAFKASERVER_URI: "kafkaserver"
+            ZKSERVER_URI: "kafkaserver"
+            DATABASESERVER_PORT: "3306"
+            EUREKASERVER_PORT:   "8761"
+            CONFIGSERVER_PORT:   "8888"
+            ZUULSERVER_PORT:     "5555"
+            KAFKASERVER_PORT:    "2181"
+            REDIS_PORT:          "6379"
+            ZIPKIN_PORT:         "9411"
+
+
+    organizationservice:
+        image: cjy/tmx-organization-service:cjy
+        ports:
+        - "8001:8001"
+        environment:
+            PROFILE: "prod"
+            SERVER_PORT: "8001"
+            CONFIGSERVER_URI: "http://configserver:8888"
+            EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
+            ZIPKIN_URI: "http://zipkin:9411"
+            KAFKASERVER_URI: "kafkaserver"
+            ZKSERVER_URI: "kafkaserver"
+            DATABASESERVER_PORT: "3306"
+            EUREKASERVER_PORT:   "8761"
+            CONFIGSERVER_PORT:   "8888"
+            ZUULSERVER_PORT:     "5555"
+            KAFKASERVER_PORT:    "2181"
+            REDIS_PORT:          "6379"
+            ZIPKIN_PORT:         "9411"

@@ -12,6 +12,10 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
+/**
+ * 最低层次的Ribbon访问
+ */
+
 @Component
 public class OrganizationDiscoveryClient {
 

@@ -27,8 +27,10 @@ import java.util.List;
 @RefreshScope
 @EnableEurekaClient
 @SpringBootApplication
+
 @EnableDiscoveryClient
 @EnableFeignClients
+
 @EnableCircuitBreaker
 @EnableResourceServer
 @EnableBinding(Sink.class)

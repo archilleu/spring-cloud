@@ -1,29 +1,3 @@
-security:
-  oauth2:
-    resource:
-      userInfoUri: http://localhost:8003/auth/user
-
-redis:
-  server: redis
-  port: 6379
-
-spring:
-  cloud:
-    stream:
-      bindings:
-#        input:
-#          destination: orgChangeTopic
-#          content-type: application/json
-#          group: licensingGroup
-
-        inboundOrgChanges:
-          destination: orgChangeTopic
-          content-type: application/json
-          group: licensingGroup
-
-  zipkin:
-    baseUrl: http://zipkin:9411
-
-  sleuth:
-    sampler:
-      percentage: 1
+cloud:
+  config:
+    uri: http://localhost:8888
