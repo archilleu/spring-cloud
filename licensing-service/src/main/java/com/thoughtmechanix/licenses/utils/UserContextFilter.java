@@ -21,23 +21,25 @@ public class UserContextFilter implements Filter {
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)
             throws IOException, ServletException {
 
-
         HttpServletRequest httpServletRequest = (HttpServletRequest) servletRequest;
 
         logger.debug("I am entering the licensing service id with auth token: ", httpServletRequest.getHeader("Authorization"));
 
 
-        UserContextHolder.getContext().setCorrelationId(httpServletRequest.getHeader(UserContext.CORRELATION_ID));
-        UserContextHolder.getContext().setUserId(httpServletRequest.getHeader(UserContext.USER_ID));
-        UserContextHolder.getContext().setAuthToken(httpServletRequest.getHeader(UserContext.AUTH_TOKEN));
-        UserContextHolder.getContext().setOrgId(httpServletRequest.getHeader(UserContext.ORG_ID));
+        UserContext userContext = UserContextHolder.getContext();
+        userContext.setCorrelationId(httpServletRequest.getHeader(UserContext.CORRELATION_ID));
+        userContext.setUserId(httpServletRequest.getHeader(UserContext.USER_ID));
+        userContext.setAuthToken(httpServletRequest.getHeader(UserContext.AUTH_TOKEN));
+        userContext.setOrgId(httpServletRequest.getHeader(UserContext.ORG_ID));
 
         filterChain.doFilter(httpServletRequest, servletResponse);
     }
 
     @Override
-    public void init(FilterConfig filterConfig) throws ServletException {}
+    public void init(FilterConfig filterConfig) throws ServletException {
+    }
 
     @Override
-    public void destroy() {}
+    public void destroy() {
+    }
 }

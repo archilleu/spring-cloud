@@ -54,15 +54,20 @@ public class LicenseService {
     @HystrixCommand(
             fallbackMethod = "buildFallbackLicenseList",
             threadPoolKey = "licenseByOrgThreadPool",
-            threadPoolProperties =
-                    {@HystrixProperty(name = "coreSize", value = "30"),
-                            @HystrixProperty(name = "maxQueueSize", value = "10")},
+            //Hystrix不使用servlet容器线程池，默认使用Hystrix线程池，指明另外开设线程池
+            threadPoolProperties = {
+                    @HystrixProperty(name = "coreSize", value = "30"),
+                    @HystrixProperty(name = "maxQueueSize", value = "10")
+            },
             commandProperties = {
-                    @HystrixProperty(name = "circuitBreaker.requestVolumeThreshold", value = "10"),
-                    @HystrixProperty(name = "circuitBreaker.errorThresholdPercentage", value = "75"),
-                    @HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds", value = "7000"),
-                    @HystrixProperty(name = "metrics.rollingStats.timeInMilliseconds", value = "15000"),
-                    @HystrixProperty(name = "metrics.rollingStats.numBuckets", value = "5")}
+                    @HystrixProperty(name="execution.isolation.thread.timeoutInMilliseconds",value = "13000"),//断路器超时时间
+                    @HystrixProperty(name = "circuitBreaker.requestVolumeThreshold", value = "10"),//用于控制Hystrix考虑将该断路器跳闸之前,在10s之内必须发生的连续调用数量
+                    @HystrixProperty(name = "circuitBreaker.errorThresholdPercentage", value = "75"),//是在超过circuitBreaker.requestVolumeThreshold值之后在断路器跳闸之前必须达到的调用失败（由于超时、抛出异常或返回HTTP500）百分比
+                    @HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds", value = "7000"),//是在断路器跳闸之后，Hystrix允许另一个调用通过以便查看服务是否恢复健康之前Hystrix的休眠时间
+
+                    //以下统计信息
+                    @HystrixProperty(name = "metrics.rollingStats.timeInMilliseconds", value = "15000"),//用于控制Hystrix用来监视服务调用问题的窗口大小，其默认值为10000ms（即10s）。
+                    @HystrixProperty(name = "metrics.rollingStats.numBuckets", value = "5")}//控制在定义的滚动窗口中收集统计信息的次数。在这个窗口中，Hystrix在桶（ bucket）中收集度量数据，并检查这些桶中的统计信息，以确定远程资源调用是否失败。
     )
     public List<License> getLicensesByOrg(String organizationId) {
         randomlyRunLong();
@@ -92,7 +97,7 @@ public class LicenseService {
                 .withId("0000000-00-0000")
                 .withOrganizationId(organizationId)
                 .withProductName(
-                        "sory no licensing information currently available"
+                        "hystrix fallback: sory no licensing information currently available"
                 );
 
         fallbackList.add(license);
@@ -130,7 +135,7 @@ public class LicenseService {
 
     private void sleep() {
         try {
-            Thread.sleep(11000);
+            Thread.sleep(16000);
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -12,6 +12,13 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 使用HystrixConcurrencyStrategy，允许开发人员定义一种自定义的并发策略，它将包装Hystrix调用，并允许开发人员将附加的父线程上下文注入由Hystrix命令管理的线程中。
+ * 实现自定义HystrixConcurrencyStrategy需要执行以下3个操作。
+ * （1）定义自定义的Hystrix并发策略类。
+ * （2）定义一个Callable类，将UserContext注入Hystrix命令中。
+ * （3）配置Spring Cloud以使用自定义Hystrix并发策略。
+ */
 
 public class ThreadLocalAwareStrategy extends HystrixConcurrencyStrategy{
     private HystrixConcurrencyStrategy existingConcurrencyStrategy;
