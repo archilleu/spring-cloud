@@ -1,4 +1,4 @@
-package com.thoughtmechanix.organization.utils;
+package com.thoughtmechanix.licenses.utils;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpRequest;

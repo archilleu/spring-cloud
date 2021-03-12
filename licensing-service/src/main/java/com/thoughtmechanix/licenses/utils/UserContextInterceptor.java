@@ -8,6 +8,10 @@ import org.springframework.http.client.ClientHttpResponse;
 
 import java.io.IOException;
 
+/**
+ * 这个类用于将关联ID注入基于HTTP的传出服务请求中，这些服务请求由RestTemplate实例执行。
+ * 这样做是为了确保可以建立服务调用之间的联系。
+ */
 public class UserContextInterceptor implements ClientHttpRequestInterceptor {
 
     @Override

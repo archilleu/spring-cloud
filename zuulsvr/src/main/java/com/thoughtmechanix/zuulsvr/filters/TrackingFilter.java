@@ -10,10 +10,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+/**
+ * 前置过滤器
+ */
 @Component
-public class TrackingFilter extends ZuulFilter{
-    private static final int      FILTER_ORDER =  1;
-    private static final boolean  SHOULD_FILTER=true;
+public class TrackingFilter extends ZuulFilter {
+    private static final int FILTER_ORDER = 1;
+    private static final boolean SHOULD_FILTER = true;
     private static final Logger logger = LoggerFactory.getLogger(TrackingFilter.class);
 
     @Autowired
@@ -32,25 +35,26 @@ public class TrackingFilter extends ZuulFilter{
         return FILTER_ORDER;
     }
 
+    @Override
     public boolean shouldFilter() {
         return SHOULD_FILTER;
     }
 
-    private boolean isCorrelationIdPresent(){
-      if (filterUtils.getCorrelationId() !=null){
-          return true;
-      }
+    private boolean isCorrelationIdPresent() {
+        if (filterUtils.getCorrelationId() != null) {
+            return true;
+        }
 
-      return false;
+        return false;
     }
 
-    private String generateCorrelationId(){
+    private String generateCorrelationId() {
         return java.util.UUID.randomUUID().toString();
     }
 
     private String getOrganizationId() {
         String result = "";
-        if(filterUtils.getAuthToken() != null) {
+        if (filterUtils.getAuthToken() != null) {
             String authToken = filterUtils.getAuthToken().replace("bearer", "");
             try {
                 Claims claims = Jwts.parser().setSigningKey(serviceConfig.getJwtSigningKey().getBytes("UTF-8"))
@@ -66,18 +70,16 @@ public class TrackingFilter extends ZuulFilter{
     }
 
     public Object run() {
-
         if (isCorrelationIdPresent()) {
-           logger.debug("tmx-correlation-id found in tracking filter: {}. ", filterUtils.getCorrelationId());
-        }
-        else{
+            logger.debug("tmx-correlation-id found in tracking filter: {}. ", filterUtils.getCorrelationId());
+        } else {
             filterUtils.setCorrelationId(generateCorrelationId());
             logger.debug("tmx-correlation-id generated in tracking filter: {}.", filterUtils.getCorrelationId());
         }
 
         RequestContext ctx = RequestContext.getCurrentContext();
-        logger.debug("Processing incoming request for {}.",  ctx.getRequest().getRequestURI());
-        logger.debug("The organization id from the token is {}.",  getOrganizationId());
+        logger.debug("Processing incoming request for {}.", ctx.getRequest().getRequestURI());
+        logger.debug("The organization id from the token is {}.", getOrganizationId());
         return null;
     }
 }

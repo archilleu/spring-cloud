@@ -1,4 +1,4 @@
-package com.thoughtmechanix.organization.utils;
+package com.thoughtmechanix.licenses.utils;
 
 
 import org.springframework.util.Assert;

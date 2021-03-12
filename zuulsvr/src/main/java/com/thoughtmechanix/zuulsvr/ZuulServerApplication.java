@@ -12,6 +12,10 @@ import org.springframework.web.client.RestTemplate;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Zuul的核心是一个反向代理。反向代理是一个中间服务器，它位于尝试访问资源客户端和资源本身之间。客户端甚至不知道它正与代理之外的服务器进行通信。
+ * 反向代理负责捕获客户端的请求，然后代表客户端调用远程资源。
+ */
 
 @SpringBootApplication
 @EnableZuulProxy

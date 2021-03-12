@@ -1,3 +1,13 @@
+server:
+  port: 5555
+
+spring:
+  sleuth:
+    sampler:
+      percentage: 1
+  zipkin:
+    baseUrl: http://zipkin:9411
+
 signing:
   key: "345345fsdfsf5345"
 
@@ -5,19 +15,34 @@ zuul:
   sensitiveHeaders: Cookie,Set-Cookie #这一配置是黑名单,它含Zuul不会传播到下游服务的敏感首部。(Cookie、 Set- Cookie 和 Authorization）
   prefix:  /api
   routes:
-    organizationservice: /organization/**
     baidu:
-      path: /it/**
+      path: /baidu/**
       url: https://www.baidu.com/
-    baidu2:
-      url: http://www.ityouknow.com/
-      path: /it2/**
+    google:
+      url: https://www.google.com/
+      path: /google/**
+
 #超时
-#hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 2
+#对于超过5s的配置，必须同时设置Hystrix和Ribbon超时
 hystrix:
   command:
     default:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 10
+            timeoutInMilliseconds: 8000
+ribbon:
+  ReadTimeout: 8000
+
+eureka:
+  instance:
+    #true注册服务的IP，而不是服务器名称
+    #为什么偏向于IP地址在默认情况下，Eureka在尝试注册服务 ，将会使用主机名让外界与它进行联系。这种方式在基于服务器的环境中运行良好，
+    #在这样的环境中，服务 被分配一个DNS支持的主机名。但是，在基于容器的部署（如Docker）中，容器将以随机生成的主机名启动，并且该容器没有DNS记录。
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://eurekaserver:8761/eureka/
+#http://localhost:5555/api/licensingservice/v1/organizations/442adb6e-fa58-47f3-9ca2-ed1fecdfe86c/licenses/08dbe05-606e-4dad-9d33-90ef10e334f9
