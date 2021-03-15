@@ -1,3 +1,10 @@
 spring:
   application:
     name: specialroutesservice
+
+  profiles:
+    active: local
+
+  cloud:
+    config:
+      uri: http://localhost:8888
