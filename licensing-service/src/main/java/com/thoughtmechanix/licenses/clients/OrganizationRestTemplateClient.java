@@ -1,5 +1,6 @@
 package com.thoughtmechanix.licenses.clients;
 
+import com.thoughtmechanix.licenses.config.ServiceConfig;
 import com.thoughtmechanix.licenses.model.Organization;
 import com.thoughtmechanix.licenses.repository.OrganizationRedisRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -16,6 +17,9 @@ public class OrganizationRestTemplateClient {
     RestTemplate restTemplate;
 
     @Autowired
+    ServiceConfig serviceConfig;
+
+    @Autowired
     OrganizationRedisRepository organizationRedisRepository;
 
     public Organization getOrganization(String organizationId){
@@ -28,11 +32,10 @@ public class OrganizationRestTemplateClient {
 
         log.debug("unable to locate organizaion from the redis cache: {}", organizationId);
 
+        String url = serviceConfig.getUrl() + "/api/organizationservice/v1/organizations/{organizationId}";
         ResponseEntity<Organization> restExchange =
                 restTemplate.exchange(
-                        "http://zuulservice:5555/api/organization/v1/organizations/{organizationId}",
-//加了@LoadBalanced不能用下面的域名
-//                        "http://localhost:5555/api/organization/v1/organizations/{organizationId}",
+                        url,
                         HttpMethod.GET,
                         null, Organization.class, organizationId);
 

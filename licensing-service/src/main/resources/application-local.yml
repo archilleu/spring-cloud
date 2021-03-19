@@ -6,3 +6,6 @@ hystrix:
         isolation:
           thread:
             timeoutinmilliseconds: 8000
+
+mydefines:
+  url: http://localhost:5555

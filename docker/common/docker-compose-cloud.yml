@@ -16,6 +16,22 @@ services:
             EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
             EUREKASERVER_PORT: "8761"
 
+    zuulservice:
+        image: cjy/tmx-zuul-service:cjy
+        ports:
+            - "5555:5555"
+        environment:
+            PROFILE: "prod"
+            SERVER_PORT: "5555"
+            CONFIGSERVER_URI: "http://configserver:8888"
+            EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
+            ZIPKIN_URI: "http://zipkin:9411"
+            DATABASESERVER_PORT: "3306"
+            EUREKASERVER_PORT:   "8761"
+            CONFIGSERVER_PORT:   "8888"
+            ZUULSERVER_PORT:     "5555"
+            ZIPKIN_PORT:         "9411"
+
     authenticationservice:
         image: cjy/tmx-authentication-service:cjy
         ports:
@@ -28,5 +44,21 @@ services:
             DATABASE_PORT: "3306"
             EUREKASERVER_PORT:   "8761"
             CONFIGSERVER_PORT:   "8888"
+
+    specialroutesservice:
+        image: cjy/tmx-specialroutes-service:cjy
+        ports:
+            - "8002:8002"
+        environment:
+            PROFILE: "prod"
+            SERVER_PORT: "8002"
+            CONFIGSERVER_URI: "http://configserver:8888"
+            EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
+            ZIPKIN_URI: "http://zipkin:9411"
+            DATABASESERVER_PORT: "3306"
+            EUREKASERVER_PORT:   "8761"
+            CONFIGSERVER_PORT:   "8888"
+            ZUULSERVER_PORT:     "5555"
+            ZIPKIN_PORT:         "9411"
 
 

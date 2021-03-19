@@ -41,3 +41,23 @@ services:
             KAFKASERVER_PORT:    "2181"
             REDIS_PORT:          "6379"
             ZIPKIN_PORT:         "9411"
+
+    organizationservice-new:
+        image: cjy/tmx-organization-service-new:cjy
+        ports:
+        - "8009:8009"
+        environment:
+            PROFILE: "prod"
+            SERVER_PORT: "8009"
+            CONFIGSERVER_URI: "http://configserver:8888"
+            EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
+            ZIPKIN_URI: "http://zipkin:9411"
+            KAFKASERVER_URI: "kafkaserver"
+            ZKSERVER_URI: "kafkaserver"
+            DATABASESERVER_PORT: "3306"
+            EUREKASERVER_PORT:   "8761"
+            CONFIGSERVER_PORT:   "8888"
+            ZUULSERVER_PORT:     "5555"
+            KAFKASERVER_PORT:    "2181"
+            REDIS_PORT:          "6379"
+            ZIPKIN_PORT:         "9411"

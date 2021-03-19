@@ -2,6 +2,13 @@ spring:
   jpa:
     show-sql: true
 
+  cloud:
+    stream:
+      kafka:
+        binder:
+          zkNodes: localhost
+          brokers: localhost
+
   datasource:
     druid:
       url: jdbc:mysql://localhost:3306/license?serverTimezone=UTC&allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false
@@ -22,6 +29,9 @@ eureka:
 
 debug:
   true
+
+redis:
+  server: localhost
 
 logging:
   path: logs/

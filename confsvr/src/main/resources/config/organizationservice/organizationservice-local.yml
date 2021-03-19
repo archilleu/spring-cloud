@@ -8,6 +8,13 @@ spring:
       username: root
       password: root
 
+  cloud:
+    stream:
+      kafka:
+        binder:
+          zkNodes: localhost
+          brokers: localhost
+
 eureka:
   instance:
     #true注册服务的IP，而不是服务器名称

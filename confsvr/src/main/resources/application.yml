@@ -11,6 +11,7 @@ spring:
               classpath:config/,
               classpath:config/licensingservice,
               classpath:config/organizationservice,
+              classpath:config/organizationservicenew,
               classpath:config/zuulservice,
               classpath:config/specialroutesservice,
               classpath:config/authenticationservice,

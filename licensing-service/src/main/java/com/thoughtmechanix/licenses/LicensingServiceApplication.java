@@ -1,6 +1,7 @@
 package com.thoughtmechanix.licenses;
 
 import com.thoughtmechanix.licenses.config.ServiceConfig;
+import com.thoughtmechanix.licenses.events.models.OrganizationChangeModel;
 import com.thoughtmechanix.licenses.utils.UserContextInterceptor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,7 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.cloud.stream.annotation.EnableBinding;
+import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.cloud.stream.messaging.Sink;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Primary;
@@ -33,7 +35,6 @@ import java.util.List;
 
 @EnableCircuitBreaker
 @EnableResourceServer
-@EnableBinding(Sink.class)
 public class LicensingServiceApplication {
 
 //    @LoadBalanced
@@ -52,7 +53,7 @@ public class LicensingServiceApplication {
     @Autowired
     ServiceConfig serviceConfig;
 
-    @LoadBalanced
+//    @LoadBalanced
     @Primary
     @Bean
     public RestTemplate getCustomRestTemplate() {

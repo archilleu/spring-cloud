@@ -76,7 +76,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <start-class>com.thoughtmechanix.zuulsvr.ZuulServerApplication</start-class>
     <java.version>1.8</java.version>
-    <docker.image.name>cjy/tmx-zuulsvr</docker.image.name>
+    <docker.image.name>cjy/tmx-zuul-service</docker.image.name>
     <docker.image.tag>cjy</docker.image.tag>
   </properties>
 

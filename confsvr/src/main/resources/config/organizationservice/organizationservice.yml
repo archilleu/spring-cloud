@@ -24,6 +24,17 @@ spring:
       max-open-prepared-statements: 50
       max-pool-prepared-statement-per-connection-size: 20
 
+  cloud:
+    stream:
+      bindings:
+        output:
+          destination:  orgChangeTopic
+          content-type: application/json
+      kafka:
+        binder:
+          zkNodes: zookeeper
+          brokers: kafka
+
 signing:
   key: "345345fsdfsf5345"
 
@@ -43,18 +54,6 @@ redis:
   server: redis
   port: 6379
 
-cloud:
-  stream:
-    bindings:
-      #        input:
-      #          destination: orgChangeTopic
-      #          content-type: application/json
-      #          group: licensingGroup
-
-      inboundOrgChanges:
-        destination: orgChangeTopic
-        content-type: application/json
-        group: licensingGroup
 
 zipkin:
   baseUrl: http://zipkin:9411
